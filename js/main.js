@@ -332,7 +332,10 @@ function renderReels(symbols, spinning, held = G.held) {
     reel.classList.toggle('spinning', !!spinning);
     reel.classList.toggle('held', !!held[i]);
     if (spinning) { sym.textContent = '\u{1F3B0}'; return; }
-    if (symbols) sym.textContent = symbols[i] ? SYMBOL_META[symbols[i]].icon : '\u2753';
+    if (symbols) {
+      const meta = SYMBOL_META[symbols[i]];
+      sym.textContent = meta ? meta.icon : '\u2753';
+    }
   });
 }
 
