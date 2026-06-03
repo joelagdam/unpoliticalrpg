@@ -39,7 +39,7 @@ export const SYMBOL = Object.freeze({
 });
 
 export const SYMBOL_META = Object.freeze({
-  ATTACK: { icon: '\u2694\uFE0F', label: 'Attack' }, // crossed swords
+  ATTACK: { icon: '\u{1F4A5}', label: 'Attack' }, // collision/impact (renders reliably)
   SHIELD: { icon: '\u{1F6E1}\uFE0F', label: 'Shield' },
   HEAL: { icon: '\u2764\uFE0F', label: 'Heal' },
   SCATTER: { icon: '\u2B50', label: 'Scatter' },
