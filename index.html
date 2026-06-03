@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Political Slot Battle RPG</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- ===================== Title / Faction Select ===================== -->
+    <section id="screen-select" class="screen active">
+      <header class="title-block">
+        <h1>Political Slot Battle <span class="accent">RPG</span></h1>
+        <p class="subtitle">Spin the reels. Win the seat. <em>60% strategy, 40% luck.</em></p>
+      </header>
+
+      <h2 class="section-label">Choose your faction</h2>
+      <div id="faction-grid" class="faction-grid"></div>
+
+      <div class="select-footer">
+        <p id="select-hint" class="hint">Pick a faction to begin. Your opponent will be drawn at random.</p>
+        <button id="start-btn" class="primary-btn" disabled>Start Battle</button>
+      </div>
+    </section>
+
+    <!-- ========================= Battle Screen ========================= -->
+    <section id="screen-battle" class="screen">
+      <div class="battle-topbar">
+        <button id="quit-btn" class="ghost-btn" title="Back to faction select">&#8592; Quit</button>
+        <div class="timer-wrap">
+          <span class="timer-label">MATCH TIMER</span>
+          <span id="timer" class="timer">5:00</span>
+        </div>
+        <div class="turn-indicator">Turn <span id="turn-count">1</span></div>
+      </div>
+
+      <div class="arena">
+        <div id="panel-player" class="combatant-panel"></div>
+        <div class="vs-badge">VS</div>
+        <div id="panel-ai" class="combatant-panel ai"></div>
+      </div>
+
+      <div class="slot-area">
+        <div id="reels" class="reels">
+          <button class="reel" data-reel="0"><span class="reel-symbol">&#10067;</span><span class="hold-tag">HOLD</span></button>
+          <button class="reel" data-reel="1"><span class="reel-symbol">&#10067;</span><span class="hold-tag">HOLD</span></button>
+          <button class="reel" data-reel="2"><span class="reel-symbol">&#10067;</span><span class="hold-tag">HOLD</span></button>
+        </div>
+        <div id="spin-readout" class="spin-readout">Press <strong>SPIN</strong> to take your turn.</div>
+        <div class="controls">
+          <button id="spin-btn" class="primary-btn">Spin</button>
+          <button id="reroll-btn" class="secondary-btn" disabled>Re-roll <span id="reroll-count"></span></button>
+          <button id="resolve-btn" class="secondary-btn" disabled>Resolve Turn</button>
+          <button id="ultimate-btn" class="ultimate-btn" disabled>Ultimate</button>
+        </div>
+        <p class="reroll-hint">Tip: after spinning, click reels to <strong>HOLD</strong> them, then Re-roll the rest.</p>
+      </div>
+
+      <div class="log-wrap">
+        <h3>Battle Log</h3>
+        <ul id="log" class="log"></ul>
+      </div>
+    </section>
+
+    <!-- ====================== Game Over Overlay ====================== -->
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h2 id="overlay-title">Victory</h2>
+        <p id="overlay-text"></p>
+        <button id="again-btn" class="primary-btn">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
